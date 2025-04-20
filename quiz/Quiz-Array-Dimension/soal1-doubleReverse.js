@@ -18,25 +18,32 @@ output: [ 'tamkin', 'masuk', 'benci', 'cinta', 'ubar' ]
 
 function doubleReverse(arr) {
   let newArr = [];
-
-  for (let x of arr) {
-    if (x.length % 2 == 0) {
-      // let r = "";
-      for (let i = x.length - 1; i >= 0; i--) {
-        // r += str[i];
-
-        newArr.push(r);
-      }
+  let res = [];
+  if (arr.length !=0) {
+    for (let i = 0; i <= arr.length - 1; i++) {
+      let temp = "";
+      if (arr[i].length % 2 == 0) {
+        let str = arr[i];
+        for (let j = str.length - 1; j >= 0; j--) {
+          temp += str[j];
+        }
+      } else temp = arr[i];
+      newArr.push(temp);
     }
-  }
-  return newArr;
+    // console.log(newArr);
+
+    for (let i = newArr.length - 1; i >= 0; i--) {
+      res.push(newArr[i]);
+    }
+    return res;
+  } else return "Invalid input"
 }
 
 console.log(doubleReverse(["rabu", "cinta", "benci", "masuk", "nikmat"]));
 // [ 'tamkin', 'masuk', 'benci', 'cinta', 'ubar' ]
-// console.log(doubleReverse(["aku", "sayang", "kamu"]));
-// // [ 'umak', 'gnayas', 'aku' ]
-// console.log(doubleReverse(["pelakor", "perusak", "rumah", "tangga"]));
-// //[ 'anggnat', 'rumah', 'perusak', 'pelakor' ]
-// console.log(doubleReverse([]));
-// // invalid input parameter
+console.log(doubleReverse(["aku", "sayang", "kamu"]));
+// [ 'umak', 'gnayas', 'aku' ]
+console.log(doubleReverse(["pelakor", "perusak", "rumah", "tangga"]));
+//[ 'anggnat', 'rumah', 'perusak', 'pelakor' ]
+console.log(doubleReverse([]));
+// invalid input
