@@ -14,19 +14,15 @@ RULES
 */
 
 function angkaTerbesar(sentence) {
-  // let maxi = -Infinity;
-  if (sentence.length == 1) {
-    return sentence[0];
-  } else {
-    //     if(maxi<sentence[sentence.length-1]){
-    //       maxi = sentence[sentence.length-1]
-    //       return angkaTerbesar(sentence.slice(sentence.length-1))
-    let min = Math.min(...sentence)
-    // return sentence.sort()
-
-    return angkaTerbesar(sentence.shift())
-
-    // return angkaTerbesar(sentence.slice(min))
+  if (sentence.length === 1) return sentence;
+  else if(sentence.length === 0) return  -1
+    {
+    if (sentence[0] > sentence[1]) {
+      const temp = sentence[0];
+      sentence[0] = sentence[1];
+      sentence[1] = temp;
+    }
+    return sentence[0], angkaTerbesar(sentence.slice(1));
   }
 }
 
