@@ -14,7 +14,7 @@ RULES
 */
 
 function angkaTerbesar(sentence) {
-  if (sentence.length === 1) return sentence;
+  if (sentence.length === 1) return sentence[0];
   else if(sentence.length === 0) return  -1
     {
     if (sentence[0] > sentence[1]) {
