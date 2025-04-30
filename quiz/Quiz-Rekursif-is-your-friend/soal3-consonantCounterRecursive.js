@@ -16,15 +16,39 @@
 */
 
 function consonantCounterRecursive(sentences) {
-  if (sentences.length === 0) return "no data";
+  if (sentences.length === 0) return 0;
   sentences.split("");
 
-  let consonant = [];
+  let consonant = "";
   for (let j = 0; j < sentences.length; j++) {
-    if (sentences[j] == sentences[j].toLowerCase()) {
-      consonant.push(sentences[j]);
+    let chr = sentences[j];
+    if (
+      chr !== "a" &&
+      chr !== "i" &&
+      chr !== "u" &&
+      chr !== "e" &&
+      chr !== "o" &&
+      chr !== "A" &&
+      chr !== "I" &&
+      chr !== "U" &&
+      chr !== "E" &&
+      chr !== "O" &&
+      chr !== " " &&
+      chr !== "0" &&
+      chr !== "1" &&
+      chr !== "2" &&
+      chr !== "3" &&
+      chr !== "4" &&
+      chr !== "5" &&
+      chr !== "6" &&
+      chr !== "7" &&
+      chr !== "8" &&
+      chr !== "9"
+    ) {
+      consonant = chr;
     }
-  } return consonant;
+    return (consonant ? 1 : 0) + consonantCounterRecursive(sentences.slice(1));
+  }
 }
 
 console.log(consonantCounterRecursive("alDi Suka MakAn baksO")); //10
