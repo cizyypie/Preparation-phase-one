@@ -25,7 +25,7 @@ function palindromeRecursive(sentence) {
     maju = sentence[0] + palindromeRecursive(sentence.slice(1))
     
   }
-  return mundur == maju
+    return mundur == maju
 }
 
 // TEST CASES
