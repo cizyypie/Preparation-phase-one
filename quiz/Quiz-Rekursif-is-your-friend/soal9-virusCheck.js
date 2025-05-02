@@ -33,7 +33,6 @@ function virusCheckRecursive(str, viruses)
 {
   if (!viruses) return "There is no virus";
   let chr = str[0];
-  let viruss = [];
   let virusLower = viruses.toLowerCase().split("|");
   let virusUpper = viruses.toUpperCase().split("|");
   let vrs = virusLower.concat(virusUpper);
